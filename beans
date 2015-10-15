@@ -1,0 +1,16 @@
+#!/usr/bin/env ruby
+
+def nope
+  print "Usage: give me the number of grams of coffee grounds you got. "
+  puts "I give you back the number of grams of water you need. The end."
+end
+
+grams_coffee = ARGV.first && ARGV.first.to_i
+
+# if ARGV.first.to_i.to_s !== ARGV.first, then it wasn't an integer to begin with
+if grams_coffee && grams_coffee.to_s == ARGV.first
+  grams_water = 16.0 * grams_coffee
+  puts "Add #{grams_water} grams of water to #{grams_coffee} grams of coffee."
+else
+  nope
+end
